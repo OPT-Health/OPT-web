@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimal Health App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>    
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <span class="logo-icon">
+                <!-- Replace this SVG with your colorful circling human figures -->
+                <img src="OPT.png" alt="Logo" class="logo-img">
+            </span>
+            <h1 class="logo">Optimal Health App</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#clinics">For Clinics</a></li>
+                    <li><a href="#individuals">For Individuals</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section id="home" class="hero">
+        <video autoplay loop muted class="hero-video">
+            <source src="path-to-your-video.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+            <h2>Optimized Physical Therapy!</h2>
+            <p>Empowering clinics, physical therapists, and individuals with tools to track progress and enhance outcomes.</p>
+            <a href="#contact" class="cta-button">Schedule a Demo</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor patient progress with detailed reports and analytics.</p>
+                </div>
+                <div class="feature">
+                    <h3>Real-time Feedback from AI</h3>
+                    <p>Patients get feedback to correct posture.</p>
+                </div>
+                <div class="feature">
+                    <h3>Secure Data</h3>
+                    <p>HIPAA-compliant to ensure data privacy and security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clinics" class="clinics">
+        <div class="container">
+            <h2>For Clinics and Physical Therapists</h2>
+            <p>Streamline operations and improve patient outcomes with advanced tools.</p>
+            <div class="images-row">
+                <div class="image-item">
+                    <b><p>Step 1: Create Exercises</p></b>
+                    <img src="human_pose.jpg" alt="Step 1: Create Exercises">
+                </div>
+                <div class="image-item">
+                    <b><p>Step 2: Record Instructions</p> </b>
+                    <img src="voice.png" alt="Step 2: Record Instruction">
+                </div>
+                <div class="image-item">
+                    <b><p>Step 3: Share With Patients</p> </b>
+                    <img src="share.png" alt="Step 3: Share With Patients">
+                    
+                </div>
+                <div class="image-item">
+                    <b><p>Step 4: Analize Results</p></b>
+                    <img src="analize.png" alt="Step 4: Analize Results">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="individuals" class="individuals">
+        <div class="container">
+            <h2>For Individuals</h2>
+            <p>Take control of your health journey with user-friendly tools.</p>
+            <div class="images-row">
+                <div class="image-item">
+                    <b><p>Step 1: Perform Exercises</p></b>
+                    <img src="human_pose.jpg" alt="Step 1: Create Exercises">
+                </div>
+                <div class="image-item">
+                    <b><p>Step 2: Add a Second Camera for Higher Precision</p> </b>
+                    <img src="camera.png" alt="Step 2: Add a Second Camera for Higher Precision">
+                </div>
+                <div class="image-item">
+                    <b><p>Step 4: View Results</p></b>
+                    <img src="analize.png" alt="Step 4: View Results">
+                    
+                </div>
+                <div class="image-item">
+                    <b><p>Step 3: Share With Your Physical Therapist</p> </b>
+                    <img src="share.png" alt="Step 3: Share With Your Physical Therapist">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or ready to get started? Reach out today!</p>
+            <form id="contactForm" class="contact-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "Aq-wYAC4kfbDLm-0x"}); // Replace with your EmailJS user ID
+        })();
+    
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+    
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+    
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                message: message,
+            };
+    
+            emailjs.send("service_3ts441c", "template_pv0o89d", templateParams)
+                .then(function (response) {
+                    alert("Message sent successfully!");
+                }, function (error) {
+                    alert("Failed to send message: " + JSON.stringify(error));
+                });
+        });
+    </script>
+
+
+</body>
+</html>
