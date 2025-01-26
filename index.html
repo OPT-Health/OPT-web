@@ -12,17 +12,23 @@
 <body>
     <header class="header">
         <div class="container">
-            <span class="logo-icon">
-                <!-- Replace this SVG with your colorful circling human figures -->
-                <img src="OPT.png" alt="Logo" class="logo-img">
-            </span>
-            <h1 class="logo">Optimal Health App</h1>
+            <div class="logo-hamburger">
+                <span class="logo-icon">
+                    <!-- Replace this SVG with your colorful circling human figures -->
+                    <img src="OPT.png" alt="Logo" class="logo-img">
+                </span>
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+           </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#clinics">For Clinics</a></li>
-                    <li><a href="#individuals">For Individuals</a></li>
+                    <li><a href="#individuals">For Patients</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -30,9 +36,11 @@
     </header>
     
     <section id="home" class="hero">
-        <video autoplay loop muted class="hero-video">
-            <source src="path-to-your-video.mp4" type="video/mp4">
-        </video>
+        <div class="video-container">
+            <video autoplay loop muted class="hero-video">
+                <source src="video-final.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="container">
             <h2>Optimized Physical Therapy!</h2>
             <p>Empowering clinics, physical therapists, and individuals with tools to track progress and enhance outcomes.</p>
@@ -89,7 +97,7 @@
 
     <section id="individuals" class="individuals">
         <div class="container">
-            <h2>For Individuals</h2>
+            <h2>For Patients</h2>
             <p>Take control of your health journey with user-friendly tools.</p>
             <div class="images-row">
                 <div class="image-item">
@@ -153,7 +161,7 @@
                 });
         });
     </script>
-
+   <script src="menu-toggle.js" defer></script>
 
 </body>
 </html>
